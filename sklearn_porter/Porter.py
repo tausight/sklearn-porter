@@ -289,7 +289,7 @@ class Porter(object):
         if self.sklearn_ver[:2] >= (0, 18):
             from sklearn.neural_network \
                 import MLPRegressor
-            regressors += (MLPRegressor, )
+            regressors += (MLPRegressor, DecisionTreeRegressor)
 
         return regressors
 
