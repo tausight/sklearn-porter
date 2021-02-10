@@ -1,0 +1,7 @@
+double {method_name}(double features[{n_features}]) {{
+
+    double classes[{n_classes}];
+    {branches}
+
+    return classes[0];
+}}
