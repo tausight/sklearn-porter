@@ -12,6 +12,7 @@ from sklearn.tree import DecisionTreeRegressor
 from sklearn.ensemble import AdaBoostClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.ensemble import ExtraTreesClassifier
+from sklearn.ensemble import ExtraTreesRegressor
 from sklearn.svm import LinearSVC
 from sklearn.svm import SVC
 from sklearn.svm import NuSVC
@@ -289,7 +290,7 @@ class Porter(object):
         if self.sklearn_ver[:2] >= (0, 18):
             from sklearn.neural_network \
                 import MLPRegressor
-            regressors += (MLPRegressor, DecisionTreeRegressor)
+            regressors += (MLPRegressor, DecisionTreeRegressor, ExtraTreesRegressor)
 
         return regressors
 
@@ -372,15 +373,15 @@ class Porter(object):
         if exec_cmd is not None and len(X.shape) == 1:
             full_exec_cmd = exec_cmd + [str(sample).strip() for sample in X]
             pred_y = Shell.check_output(full_exec_cmd, cwd=tnp_dir)
-            pred_y = int(pred_y)
+            pred_y = float(pred_y)
 
         # Multiple feature sets:
         if exec_cmd is not None and len(X.shape) > 1:
-            pred_y = np.empty(X.shape[0], dtype=int)
+            pred_y = np.empty(X.shape[0], dtype=float)
             for idx, features in enumerate(X):
                 full_exec_cmd = exec_cmd + [str(f).strip() for f in features]
                 pred = Shell.check_output(full_exec_cmd, cwd=tnp_dir)
-                pred_y[idx] = int(pred)
+                pred_y[idx] = float(pred)
 
         # Cleanup:
         if not keep_tmp_dir:

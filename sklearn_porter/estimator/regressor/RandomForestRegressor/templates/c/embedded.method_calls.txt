@@ -1,0 +1,1 @@
+pred_value += {method_name}(features);

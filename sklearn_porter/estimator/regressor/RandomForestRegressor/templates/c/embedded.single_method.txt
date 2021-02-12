@@ -1,0 +1,5 @@
+int {method_name}_{method_id}(float features[]) {{
+    int classes[{n_classes}];
+    {tree_branches}
+    return classes[0];
+}}

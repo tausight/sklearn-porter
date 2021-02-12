@@ -1,0 +1,10 @@
+{methods}
+float {method_name} (float features[]) {{
+    float n_estimators = {n_estimators};
+    double pred_value = 0;
+    
+
+    {method_calls}
+
+    return pred_value/n_estimators;
+}}
