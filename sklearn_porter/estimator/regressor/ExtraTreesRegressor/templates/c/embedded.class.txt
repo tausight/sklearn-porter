@@ -4,7 +4,7 @@
 
 {method}
 
-float main(int argc, const char * argv[]) {{
+int main(int argc, const char * argv[]) {{
     float features[argc-1];
     int i;
     for (i = 1; i < argc; i++) {{
