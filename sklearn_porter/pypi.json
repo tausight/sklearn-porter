@@ -2,11 +2,10 @@
   "name": "sklearn-porter",
   "description": "Transpile trained scikit-learn models to C, Java, JavaScript and others.",
   "long_description": "file://../readme.md",
-  "author": "Darius Morawiec",
-  "author_email": "nok@users.noreply.github.com",
-  "url": "https://github.com/nok/sklearn-porter",
-  "keywords": ["sklearn", "scikit-learn"],
+  "author": "Originally - Darius Morawiec now Tausight Inc.",
+  "author_email": "backend@tausight.com",
+  "url": "https://github.com/tausight/sklearn-porter",
   "requirements": "file://../requirements.txt",
-  "version": "0.7.4",
+  "version": "1.0.0",
   "license": "MIT"
 }
